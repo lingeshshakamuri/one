@@ -1,24 +1,21 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NexusShop · Modern E‑Commerce</title>
+  <title>NexusShop · friendly e‑commerce</title>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
   <style>
-    /* ----- reset & base ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ----- reset & base (soft, approachable) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Inter", system-ui, -apple-system, sans-serif;
-      background: #fbfbfa;
+      background: #f7f7f5;
       color: #1e1e2a;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -34,33 +31,32 @@
       padding: 0 24px;
     }
 
-    /* ----- variables (soft, familiar) ----- */
+    /* ----- friendly variables ----- */
     :root {
-      --bg: #fbfbfa;
+      --bg: #f7f7f5;
       --card: #ffffff;
       --primary: #1e1e2a;
       --primary-light: #2c2c3e;
-      --accent: #d65a4a;        /* warm, friendly red */
+      --accent: #d65a4a;          /* warm coral */
       --accent-light: #f3ded9;
       --accent-dark: #b5473a;
       --muted: #6b6b7a;
-      --muted-light: #a8a8b8;
-      --surface: #f0efec;
+      --muted-light: #b0b0be;
+      --surface: #efeeea;
       --success: #2a9d8f;
       --warning: #e9b741;
-      --radius: 18px;
-      --radius-sm: 10px;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-      --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.08);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --shadow: 0 4px 16px rgba(0,0,0,0.03);
+      --shadow-hover: 0 16px 40px rgba(0,0,0,0.07);
       --transition: 0.2s ease;
     }
 
-    /* ----- utilities ----- */
     .muted { color: var(--muted); }
     .text-center { text-align: center; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
-    /* ----- buttons (friendly & accessible) ----- */
+    /* ----- buttons (friendly, rounded) ----- */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -82,7 +78,7 @@
       background: var(--accent-dark);
       border-color: var(--accent-dark);
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(214, 90, 74, 0.25);
+      box-shadow: 0 8px 20px rgba(214, 90, 74, 0.25);
     }
     .btn-secondary {
       background: var(--primary);
@@ -97,7 +93,7 @@
     .btn-outline {
       background: transparent;
       color: var(--primary);
-      border-color: rgba(30, 30, 42, 0.15);
+      border-color: rgba(30,30,42,0.12);
     }
     .btn-outline:hover {
       background: var(--primary);
@@ -108,7 +104,7 @@
     .btn-ghost {
       background: rgba(255,255,255,0.12);
       color: #fff;
-      border-color: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.18);
     }
     .btn-ghost:hover {
       background: rgba(255,255,255,0.22);
@@ -117,14 +113,14 @@
     }
     .btn-sm { padding: 8px 18px; font-size: 0.8rem; }
 
-    /* ----- header (sticky, clean) ----- */
+    /* ----- header (clean, light) ----- */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(30,30,42,0.04);
     }
     .header-inner {
@@ -132,8 +128,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 10px 0;
-      min-height: 70px;
+      padding: 8px 0;
+      min-height: 66px;
     }
 
     .brand {
@@ -141,12 +137,12 @@
       align-items: center;
       gap: 8px;
       font-weight: 800;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       letter-spacing: -0.4px;
       color: var(--primary);
     }
     .brand .accent { color: var(--accent); }
-    .brand i { font-size: 1.6rem; color: var(--accent); }
+    .brand i { font-size: 1.5rem; color: var(--accent); }
 
     nav.main-nav ul {
       display: flex;
@@ -175,7 +171,7 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
     }
     .icon-btn {
       width: 42px;
@@ -200,7 +196,7 @@
       right: -2px;
       background: var(--accent);
       color: #fff;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 700;
       width: 20px;
       height: 20px;
@@ -218,7 +214,7 @@
       padding: 0 16px 0 18px;
       border: 2px solid transparent;
       transition: var(--transition);
-      min-width: 200px;
+      min-width: 190px;
     }
     .search-wrap:focus-within {
       border-color: var(--accent);
@@ -277,16 +273,16 @@
     #mobileMenu ul li a:hover { background: var(--surface); }
     #mobileMenu ul li a i { width: 22px; color: var(--muted); }
 
-    /* ----- hero (welcoming) ----- */
+    /* ----- hero (welcoming, bright) ----- */
     .hero {
       position: relative;
       display: flex;
       align-items: center;
-      min-height: 420px;
-      padding: 48px 0;
+      min-height: 380px;
+      padding: 40px 0;
       border-radius: var(--radius);
       overflow: hidden;
-      margin: 20px 24px 0;
+      margin: 18px 24px 0;
       background: linear-gradient(145deg, #1a1a2a, #2c2c42);
     }
     .hero::before {
@@ -294,7 +290,7 @@
       position: absolute;
       inset: 0;
       background: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      opacity: 0.28;
+      opacity: 0.25;
       z-index: 0;
     }
     .hero .container { position: relative; z-index: 1; }
@@ -309,28 +305,28 @@
       font-weight: 600;
       font-size: 0.8rem;
       letter-spacing: 0.3px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       color: #fff;
       line-height: 1.15;
-      max-width: 640px;
-      margin-bottom: 12px;
+      max-width: 580px;
+      margin-bottom: 10px;
     }
     .hero p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.1rem;
-      max-width: 480px;
-      margin-bottom: 28px;
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      max-width: 440px;
+      margin-bottom: 24px;
       line-height: 1.6;
     }
     .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
     /* ----- sections ----- */
-    .section { padding: 48px 0; }
+    .section { padding: 44px 0; }
     .section-header {
       display: flex;
       align-items: flex-end;
@@ -340,7 +336,7 @@
       flex-wrap: wrap;
     }
     .section-header .title-group h2 {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
       letter-spacing: -0.3px;
     }
@@ -538,12 +534,12 @@
     .deal-wrap .deal-img {
       flex: 0 0 46%;
       background: var(--surface);
-      min-height: 280px;
+      min-height: 260px;
     }
     .deal-wrap .deal-img img { width: 100%; height: 100%; object-fit: cover; }
     .deal-wrap .deal-content {
       flex: 1;
-      padding: 36px 40px;
+      padding: 32px 36px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -563,14 +559,14 @@
       align-self: flex-start;
       margin-bottom: 10px;
     }
-    .deal-wrap .deal-content h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; }
-    .deal-wrap .deal-content .desc { color: var(--muted); margin-bottom: 14px; }
+    .deal-wrap .deal-content h3 { font-size: 1.7rem; font-weight: 700; margin-bottom: 4px; }
+    .deal-wrap .deal-content .desc { color: var(--muted); margin-bottom: 12px; }
     .deal-wrap .deal-content .price-big {
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 800;
     }
     .deal-wrap .deal-content .price-big .old {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 400;
       color: var(--muted-light);
       text-decoration: line-through;
@@ -611,7 +607,7 @@
     .testimonials-scroll::-webkit-scrollbar { height: 4px; }
     .testimonials-scroll::-webkit-scrollbar-thumb { background: var(--accent-light); border-radius: 60px; }
     .testimonial-card {
-      flex: 0 0 320px;
+      flex: 0 0 310px;
       background: var(--card);
       border-radius: var(--radius);
       padding: 24px;
@@ -646,26 +642,26 @@
     .newsletter-wrap {
       background: linear-gradient(145deg, var(--primary), var(--primary-light));
       border-radius: var(--radius);
-      padding: 44px 48px;
+      padding: 40px 44px;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 24px;
       flex-wrap: wrap;
     }
-    .newsletter-wrap .text h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 2px; }
+    .newsletter-wrap .text h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 2px; }
     .newsletter-wrap .text p { opacity: 0.7; font-size: 0.95rem; }
     .newsletter-wrap form {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       flex: 1;
-      max-width: 460px;
+      max-width: 440px;
     }
     .newsletter-wrap form input {
       flex: 1;
-      min-width: 180px;
+      min-width: 170px;
       padding: 14px 20px;
       border-radius: 60px;
       border: 0;
@@ -692,17 +688,17 @@
     /* footer */
     footer {
       margin-top: 16px;
-      padding: 44px 0 24px;
+      padding: 40px 0 24px;
       border-top: 1px solid rgba(30,30,42,0.04);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 2.5fr 1fr 1fr 1fr;
-      gap: 40px;
+      gap: 36px;
       margin-bottom: 28px;
     }
     .footer-grid .brand-col .brand { font-size: 1.2rem; margin-bottom: 6px; }
-    .footer-grid .brand-col p { color: var(--muted); font-size: 0.9rem; max-width: 280px; line-height: 1.6; }
+    .footer-grid .brand-col p { color: var(--muted); font-size: 0.9rem; max-width: 260px; line-height: 1.6; }
     .footer-grid .brand-col .socials {
       display: flex;
       gap: 8px;
@@ -748,46 +744,46 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
     @media (max-width: 992px) {
-      .hero h1 { font-size: 2.6rem; }
-      .hero { min-height: 320px; margin: 16px 16px 0; padding: 32px 0; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero { min-height: 300px; margin: 16px 16px 0; padding: 28px 0; }
       .deal-wrap { flex-direction: column; }
-      .deal-wrap .deal-img { flex: 0 0 200px; }
-      .deal-wrap .deal-content { padding: 24px 28px; }
+      .deal-wrap .deal-img { flex: 0 0 190px; }
+      .deal-wrap .deal-content { padding: 24px 26px; }
       .newsletter-wrap { padding: 28px 24px; flex-direction: column; text-align: center; }
       .newsletter-wrap form { max-width: 100%; }
-      .search-wrap { min-width: 140px; }
+      .search-wrap { min-width: 130px; }
     }
     @media (max-width: 768px) {
       nav.main-nav { display: none; }
       .mobile-toggle { display: grid; place-items: center; }
       .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .hero h1 { font-size: 2rem; }
+      .hero h1 { font-size: 1.9rem; }
       .hero p { font-size: 0.95rem; }
-      .section-header h2 { font-size: 1.4rem; }
-      .deal-wrap .deal-content h3 { font-size: 1.4rem; }
-      .deal-wrap .deal-content .price-big { font-size: 1.6rem; }
+      .section-header h2 { font-size: 1.3rem; }
+      .deal-wrap .deal-content h3 { font-size: 1.3rem; }
+      .deal-wrap .deal-content .price-big { font-size: 1.5rem; }
       .timer-box { min-width: 50px; padding: 6px 10px; }
       .timer-box .num { font-size: 1.2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-      .brand { font-size: 1.2rem; }
-      .search-wrap { min-width: 100px; padding: 0 8px 0 12px; }
+      .brand { font-size: 1.1rem; }
+      .search-wrap { min-width: 90px; padding: 0 8px 0 12px; }
       .search-wrap input { font-size: 0.8rem; padding: 6px 0; }
       .header-actions .icon-btn { width: 36px; height: 36px; font-size: 0.95rem; }
       .cart-count { width: 18px; height: 18px; font-size: 0.55rem; }
-      .testimonial-card { flex: 0 0 260px; }
-      .section { padding: 32px 0; }
+      .testimonial-card { flex: 0 0 250px; }
+      .section { padding: 28px 0; }
     }
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
       .categories-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .hero { margin: 8px 8px 0; min-height: 240px; padding: 20px 0; border-radius: var(--radius-sm); }
-      .hero h1 { font-size: 1.6rem; }
+      .hero { margin: 8px 8px 0; min-height: 200px; padding: 18px 0; border-radius: var(--radius-sm); }
+      .hero h1 { font-size: 1.5rem; }
       .container { padding: 0 14px; }
       .deal-wrap .deal-content { padding: 16px; }
-      .deal-wrap .deal-img { flex: 0 0 140px; }
-      .newsletter-wrap { padding: 20px 16px; }
-      .newsletter-wrap .text h3 { font-size: 1.2rem; }
+      .deal-wrap .deal-img { flex: 0 0 130px; }
+      .newsletter-wrap { padding: 18px 14px; }
+      .newsletter-wrap .text h3 { font-size: 1.1rem; }
       .product-card .body { padding: 10px 10px 6px; }
       .product-card .body h5 { font-size: 0.8rem; }
       .product-card .body .price { font-size: 0.95rem; }
@@ -869,7 +865,7 @@
   <section class="hero" aria-label="Hero banner">
     <div class="container">
       <div class="badge"><i class="fas fa-sparkles"></i> New collection 2026</div>
-      <h1>Premium essentials<br>for your lifestyle</h1>
+      <h1>Shop the best<br>of everyday style</h1>
       <p>Curated fashion, tech & accessories — free shipping on your first order.</p>
       <div class="actions">
         <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop Now</button>
@@ -884,7 +880,7 @@
       <div class="section-header">
         <div class="title-group">
           <h2 id="cat-title">Browse Categories</h2>
-          <p>Find what you're looking for</p>
+          <p>Find exactly what you need</p>
         </div>
         <a href="#" class="view-all">All Categories <i class="fas fa-arrow-right"></i></a>
       </div>
@@ -1242,3 +1238,4 @@
 </script>
 </body>
 </html>
+```
